@@ -6,11 +6,20 @@ var app = {
 
         // je crée une boucle qui va générer mes cartes
         for (var nb = 0; nb < 28; nb++) {
-            var card = $('<div class="carte"></div>');
+            var card = $('<div class="carte cache"></div>');
             setOfCards.push(card);
         }
         // J'ajoute mon jeu de cartes au plateau
         $('#plateau').append(setOfCards);
+
+        $('.carte').on('click', app.showCard);
+    },
+
+    showCard: function(evt) {
+        var card = evt.currentTarget;
+        
+        $(card).removeClass('cache').addClass('image');
+
     }
 };
 

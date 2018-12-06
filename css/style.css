@@ -27,12 +27,15 @@ h1 {
 .carte {
     width: 100px;
     height: 100px;
-    
     margin-top: 7px;
 }
 
 .cache {
     background-color: #aaa;
+}
+
+.cache:hover {
+    background-color: #777;
 }
 
 .image {
