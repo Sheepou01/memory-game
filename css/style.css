@@ -1,0 +1,40 @@
+body {
+    background-color: #fafafa;
+}
+
+header {
+    background-color: #eee;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#plateau {
+    width: 780px;
+    height: 460px;
+    background-color: #ddf;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.carte {
+    width: 100px;
+    height: 100px;
+    
+    margin-top: 7px;
+}
+
+.cache {
+    background-color: #aaa;
+}
+
+.image {
+    background-image: url('../images/cards.png');
+}
