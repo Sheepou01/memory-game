@@ -13,6 +13,13 @@ h1 {
     font-weight: bold;
 }
 
+h3 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: green;
+}
+
 #plateau {
     width: 780px;
     height: 460px;

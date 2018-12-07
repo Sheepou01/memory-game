@@ -13,6 +13,13 @@ var app = {
             setOfCards.push(card);
         }
 
+        // Je crée ma variable qui gère le score
+        app.foundPairs = 0;
+
+        //Je récupère mon élément qui affiche le score
+        app.score = $('h3');
+        
+
         // J'assigne mes images de background à mes cartes
         var y = 0;
         $(setOfCards).each(function() {
@@ -30,7 +37,9 @@ var app = {
         $('#plateau').append(setOfCards);
 
         
-        $('.carte').on('click', app.showCard);
+        $('.cache').on('click', app.showCard);
+
+        
         
         
         
@@ -44,7 +53,7 @@ var app = {
         
 
         if (app.cardsToCompare.length == 2) {
-            $('.carte').off('click');
+            $('.cache').off('click');
             app.isPaire(app.cardsToCompare);
             
         }
@@ -68,7 +77,13 @@ var app = {
         if (array[0].outerHTML == array[1].outerHTML) {
             alert('Bravo');
             app.cardsToCompare = [];
-            $('.carte').on('click', app.showCard);
+            app.foundPairs++;
+            app.score.text('Nombre de paires trouvées: ' + app.foundPairs);
+            if (app.foundPairs == 14) {
+                alert('Vous avez gagné !!!!');
+            
+            }
+            $('.cache').on('click', app.showCard);
             
         } else {
             window.setTimeout(app.hideCards, 1000);
@@ -83,7 +98,7 @@ var app = {
             $(this).removeClass('image').addClass('cache');
         });
         app.cardsToCompare = [];
-        $('.carte').on('click', app.showCard);
+        $('.cache').on('click', app.showCard);
     }
 
 
