@@ -40,15 +40,20 @@ var app = {
         $('.cache').on('click', app.showCard);
 
         
+        $('#progress').animate({
+             'width': '100%'
         
+         }, 60000, app.gameLost);
         
         
     },
 
     showCard: function(evt) {
         var card = evt.currentTarget;
-        
-        $(card).removeClass('cache').addClass('image');
+
+        // je vérifie que ma carte n'a pas déjà été retournée
+        if ($(card).hasClass('cache') == true) {
+            $(card).removeClass('cache').addClass('image');
         app.cardsToCompare.push(card);
         
 
@@ -56,7 +61,10 @@ var app = {
             $('.cache').off('click');
             app.isPaire(app.cardsToCompare);
             
+            }
         }
+        
+        
         console.log(app.cardsToCompare.length)
     },
 
@@ -81,7 +89,7 @@ var app = {
             app.score.text('Nombre de paires trouvées: ' + app.foundPairs);
             if (app.foundPairs == 14) {
                 alert('Vous avez gagné !!!!');
-            
+                app.newGame();
             }
             $('.cache').on('click', app.showCard);
             
@@ -99,6 +107,23 @@ var app = {
         });
         app.cardsToCompare = [];
         $('.cache').on('click', app.showCard);
+    },
+
+    gameLost: function() {
+        alert('Vous avez perdu, vous êtes nul');
+        app.newGame();
+    },
+
+    newGame: function() {
+        
+        var newGame = confirm('Voulez vous rejouer ?');
+
+        if (newGame === true) {
+            location.reload();
+        } else {
+            alert('Tanpis !');
+            $('.carte').off('click');
+        }
     }
 
 

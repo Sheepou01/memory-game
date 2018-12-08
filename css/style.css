@@ -31,6 +31,19 @@ h3 {
     
 }
 
+#progress-bar {
+    width: 780px;
+    height: 20px;
+    border: 1px solid red;
+    margin: 1rem auto;
+}
+
+#progress {
+    width: 0;
+    height: 20px;
+    background-color: red;
+}
+
 .carte {
     width: 100px;
     height: 100px;
