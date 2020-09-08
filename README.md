@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Memory
 
 Le but est de coder un mini-jeu en HTML / CSS / JS.  
@@ -41,3 +42,7 @@ Si la tâche semble harassante, pas d’inquiétude ! Chaque étape est détaill
 ---
 
 Amusez-vous bien, et allez le plus loin possible ! ✌️
+=======
+# memory-game
+Simple memory game in javascript
+>>>>>>> d4cedc6cfb4f850d2afde657f3e630b002ffadd0
